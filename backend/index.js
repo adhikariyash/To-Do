@@ -8,7 +8,7 @@ import { TaskModel } from './src/models/user.models.js';
 dotenv.config(); 
 
 const app = express();
-app.use(cors({ origin: 'https://to-do-frontend-sigma.vercel.app' }));
+app.use(cors());
 app.use(express.json());
 
 // db connect
