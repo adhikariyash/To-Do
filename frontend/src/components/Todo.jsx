@@ -7,7 +7,7 @@ function Todo() {
  
 
   function handleTask() {
-    axios.post(`https://to-do-nine-khaki.vercel.app/api/tasks`, { task: task })
+    axios.post("https://to-do-nine-khaki.vercel.app/api/tasks", { task: task })
       .then((result) => {
         location.reload()
       })
