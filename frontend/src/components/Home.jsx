@@ -13,7 +13,8 @@ console.log(Todos)
 
      useEffect(() => {
      axios.get(`https://to-do-six-jade.vercel.app/tasks/get`)
-          .then((result) => setTodo(result.data))
+          .then((result) =>  console.log(result.data))
+         
           .catch((err) => console.log(err));
       }, []);
 

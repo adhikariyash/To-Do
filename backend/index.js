@@ -7,19 +7,15 @@ import { TaskModel } from './src/models/user.models.js';
 
 dotenv.config(); 
 const app = express();
-const PORT = process.env.PORT || 8000;
-
-app.use(cors({ origin: `${process.env.CORS_ORIGIN}` }));
+app.use(cors({ origin: `${process.env.CORS_ORIGIN}`,
+methods:["POST", "GET" ,"PUT"
+],
+credentials: true }));
 app.use(express.json());
 
 // db connect
 connectDB()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log("your app is running");
-    });
-  })
-  .catch((err) => console.error(err));
+.catch((err) => console.error(err));
 
 app.post("/api/tasks", async(req,res)=>{
  const task =  req.body.task
