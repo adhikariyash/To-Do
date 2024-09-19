@@ -12,14 +12,14 @@ const [done, setDone] = useState()
 console.log(Todos)
 
      useEffect(() => {
-     axios.get(`https://to-do-six-jade.vercel.app/tasks/get`)
+     axios.get(`https://to-do-nine-khaki.vercel.app/tasks/get`)
           .then((result) =>  console.log(result.data))
          
           .catch((err) => console.log(err));
       }, []);
 
       const handleTodo = (id)=>{
- axios.put(`https://to-do-six-jade.vercel.app/update/`+id).then(result => {
+ axios.put(`https://to-do-nine-khaki.vercel.app/update/`+id).then(result => {
   setDone(result)
   location.reload()
  }).catch(err => (err))
@@ -27,7 +27,7 @@ console.log(Todos)
       }
     
       const handleDelete =(id) =>{
-        axios.delete(`https://to-do-six-jade.vercel.app/delete/`+id)
+        axios.delete(`https://to-do-nine-khaki.vercel.app/delete/`+id)
         .then(result => console.log(result)
       .catch(err => console.log(err)))
       } 
