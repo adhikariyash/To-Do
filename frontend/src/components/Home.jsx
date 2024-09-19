@@ -13,7 +13,7 @@ console.log(Todos)
 
      useEffect(() => {
      axios.get(`https://to-do-nine-khaki.vercel.app/tasks/get`)
-          .then((result) =>  console.log(result.data))
+          .then((result) =>  setTodo(result.data))
          
           .catch((err) => console.log(err));
       }, []);

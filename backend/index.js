@@ -9,9 +9,8 @@ const PORT = process.env.PORT || 8000
 dotenv.config(); 
 const app = express();
 app.use(cors({
-  origin: ['https://to-do-frontend-2brmma5vl-yashs-projects-a28e16d2.vercel.app'
+  origin: ['https://to-do-frontend-2brmma5vl-yashs-projects-a28e16d2.vercel.app','http://localhost:5173'
 ],
-origin: ['http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 
 }));
