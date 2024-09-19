@@ -19,9 +19,7 @@ app.use(express.json());
 // db connect
 connectDB()
   .then(() => {
-    app.listen(PORT, () => {
-      console.log("your app is running");
-    });
+   console.log("Your database has started!")
   })
   .catch((err) => console.error(err));
 
