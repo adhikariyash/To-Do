@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './src/db/index.js';
-import mongoose from 'mongoose';
 import { TaskModel } from './src/models/user.models.js';
 
 const PORT ='https://to-do-gamma-nine.vercel.app/'
@@ -47,9 +46,7 @@ app.delete("/delete/:id", async(req,res)=>{
   .then(result => res.json(result)
 ).catch(err => res.json(err))
 })
-app.use("/", (req,res)=>{
-  res.json({"message": "Hello"})
-})
+
 
 
 app.listen(PORT, ()=>{
