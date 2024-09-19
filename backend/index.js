@@ -4,11 +4,11 @@ import cors from 'cors';
 import connectDB from './src/db/index.js';
 import { TaskModel } from './src/models/user.models.js';
 
-const PORT ='https://to-do-gamma-nine.vercel.app/'
+
 dotenv.config(); 
 const app = express();
 app.use(cors({
-  origin: ["http://localhost:5000"],
+  origin: ["https://to-do-frontend-sigma.vercel.app/"],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 
 }));
@@ -49,6 +49,3 @@ app.delete("/delete/:id", async(req,res)=>{
 
 
 
-app.listen(PORT, ()=>{
-  console.log("server is running")
-})
