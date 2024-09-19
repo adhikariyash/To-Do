@@ -12,10 +12,7 @@ const [done, setDone] = useState()
 console.log(Todos)
 
      useEffect(() => {
-     axios.get("https://to-do-nine-khaki.vercel.app/tasks/get")
-          .then((result) =>  setTodo(result.data))
-         
-          .catch((err) => console.log(err));
+     axios.get("https://to-do-nine-khaki.vercel.app/tasks/get").then((result) =>  setTodo(result.data)).catch((err) => console.log(err));
       }, []);
 
       const handleTodo = (id)=>{
