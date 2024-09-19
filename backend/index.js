@@ -8,9 +8,10 @@ import { TaskModel } from './src/models/user.models.js';
 dotenv.config(); 
 const app = express();
 app.use(cors({
-  origin: 'https://to-do-frontend-jvjdibj3y-yashs-projects-a28e16d2.vercel.app',
+  origin: [`https://to-do-frontend-2brmma5vl-yashs-projects-a28e16d2.vercel.app
+`],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type']
+
 }));
 app.use(express.json());
 
