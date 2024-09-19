@@ -8,7 +8,7 @@ import { TaskModel } from './src/models/user.models.js';
 dotenv.config(); 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173/']
+  origin: ['http://localhost:5173']
 }));
 app.use(express.json());
 
