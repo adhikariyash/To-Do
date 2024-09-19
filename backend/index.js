@@ -5,11 +5,13 @@ import connectDB from './src/db/index.js';
 import mongoose from 'mongoose';
 import { TaskModel } from './src/models/user.models.js';
 
+const PORT = process.env.PORT || 8000
 dotenv.config(); 
 const app = express();
 app.use(cors({
   origin: [`https://to-do-frontend-2brmma5vl-yashs-projects-a28e16d2.vercel.app
 `],
+origin: ['*'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 
 }));
