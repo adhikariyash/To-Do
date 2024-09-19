@@ -5,7 +5,7 @@ import connectDB from './src/db/index.js';
 import mongoose from 'mongoose';
 import { TaskModel } from './src/models/user.models.js';
 
-const PORT = process.env.PORT || 8000
+const PORT ='https://to-do-gamma-nine.vercel.app/'
 dotenv.config(); 
 const app = express();
 app.use(cors({
