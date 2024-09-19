@@ -5,14 +5,13 @@ import connectDB from './src/db/index.js';
 import mongoose from 'mongoose';
 import { TaskModel } from './src/models/user.models.js';
 
-const PORT = process.env.PORT || 8000
 dotenv.config(); 
 const app = express();
 app.use(cors({
- 
-origin: ['http://localhost:5173'],
+  origin: [`https://to-do-frontend-2brmma5vl-yashs-projects-a28e16d2.vercel.app
+`],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-
+  allowedHeaders: ['Content-Type']
 }));
 app.use(express.json());
 
@@ -47,7 +46,4 @@ app.delete("/delete/:id", async(req,res)=>{
   TaskModel.findByIdAndDelete({_id: id})
   .then(result => res.json(result)
 ).catch(err => res.json(err))
-})
-app.listen(PORT, ()=>{
-  console.log("server is running")
 })
