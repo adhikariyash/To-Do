@@ -7,7 +7,6 @@ import { TaskModel } from './src/models/user.models.js';
 dotenv.config(); 
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 app.use(cors({
   origin: process.env.CORS_ORIGIN,
@@ -18,9 +17,7 @@ app.use(express.json());
 // db connect
 connectDB()
   .then(() => {
-    app.listen(PORT, () => {
-      console.log("Your app is running on port " + PORT);
-    });
+  console.log(successful)
   })
   .catch((err) => console.error("Database connection error:", err));
 
