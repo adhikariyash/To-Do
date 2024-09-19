@@ -48,6 +48,11 @@ app.delete("/delete/:id", async(req,res)=>{
   .then(result => res.json(result)
 ).catch(err => res.json(err))
 })
+app.use("/", (req,res)=>{
+  res.json({"message": "Hello"})
+})
+
+
 app.listen(PORT, ()=>{
   console.log("server is running")
 })
