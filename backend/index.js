@@ -6,17 +6,24 @@ import mongoose from 'mongoose';
 import { TaskModel } from './src/models/user.models.js';
 
 dotenv.config(); 
-const app = express();
-app.use(cors({
-  origin: ['http://localhost:5173'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type']
-}));
+
+const app = express({
+  origin: process.env.CORS_ORIGIN,
+  credentials: true,
+});
+;
+
+app.use(cors({ origin: 'https://your-netlify-site.netlify.app' }));
 app.use(express.json());
 
 // db connect
 connectDB()
-.catch((err) => console.error(err));
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log("your app is running");
+    });
+  })
+  .catch((err) => console.error(err));
 
 app.post("/api/tasks", async(req,res)=>{
  const task =  req.body.task
