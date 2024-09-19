@@ -13,7 +13,7 @@ const app = express({
 });
 ;
 
-app.use(cors({ origin: 'https://your-netlify-site.netlify.app' }));
+app.use(cors({ origin: ['https://your-netlify-site.netlify.app', 'http://localhost:5173/'] }));
 app.use(express.json());
 
 // db connect
