@@ -7,7 +7,7 @@ function Todo() {
  
 
   function handleTask() {
-    axios.post("http://localhost:5000/api/tasks",{ task: task })
+    axios.post("https://to-do-l22x.onrender.com/api/tasks",{ task: task })
       .then((result) => {
           console.log(result)
       })

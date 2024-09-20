@@ -12,11 +12,11 @@ const [done, setDone] = useState()
 
 
      useEffect(() => {
-     axios.get("http://localhost:5000/tasks/get").then((result) =>  setTodo(result.data)).catch((err) => console.log(err));
+     axios.get("https://to-do-l22x.onrender.com/tasks/get").then((result) =>  setTodo(result.data)).catch((err) => console.log(err));
       }, []);
 
       const handleTodo = (id)=>{
- axios.put("http://localhost:5000/update/"+id).then(result => {
+ axios.put("https://to-do-l22x.onrender.com/update/"+id).then(result => {
   setDone(result)
   location.reload()
  }).catch(err => (err))
@@ -24,7 +24,7 @@ const [done, setDone] = useState()
       }
     
       const handleDelete =(id) =>{
-      axios.delete("http://localhost:5000/delete/"+id
+      axios.delete("https://to-do-l22x.onrender.com/delete/"+id
       )
         .then(result => console.log(result)
      ).catch(err => console.log(err))
