@@ -7,13 +7,9 @@ function Todo() {
  
 
   function handleTask() {
-    axios.post("https://to-do-nine-khaki.vercel.app/api/tasks", { task: task },{
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-    }
-    })
+    axios.post("http://localhost:5000/api/tasks",{ task: task })
       .then((result) => {
-        location.reload()
+          console.log(result)
       })
       .catch((err) => console.log(err));
   }

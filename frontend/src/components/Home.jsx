@@ -9,22 +9,14 @@ function Home() {
 const [Todos, setTodo] = useState([])
 const [done, setDone] = useState()
 
-console.log(Todos)
+
 
      useEffect(() => {
-     axios.get("https://to-do-nine-khaki.vercel.app/tasks/get",{
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-    }
-     }).then((result) =>  setTodo(result.data)).catch((err) => console.log(err));
+     axios.get("http://localhost:5000/tasks/get").then((result) =>  setTodo(result.data)).catch((err) => console.log(err));
       }, []);
 
       const handleTodo = (id)=>{
- axios.put("https://to-do-nine-khaki.vercel.app/update/"+id, {
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-}
- }).then(result => {
+ axios.put("http://localhost:5000/update/"+id).then(result => {
   setDone(result)
   location.reload()
  }).catch(err => (err))
@@ -32,11 +24,7 @@ console.log(Todos)
       }
     
       const handleDelete =(id) =>{
-      axios.delete("https://to-do-nine-khaki.vercel.app/delete/"+id,{
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-      }
-      }
+      axios.delete("http://localhost:5000/delete/"+id
       )
         .then(result => console.log(result)
      ).catch(err => console.log(err))

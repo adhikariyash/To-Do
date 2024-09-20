@@ -4,24 +4,28 @@ import cors from 'cors';
 import connectDB from './src/db/index.js';
 import { TaskModel } from './src/models/user.models.js';
 const app = express();
-app.use(cors());
 dotenv.config(); 
+const PORT = process.env.PORT || 8000
 
 
-
+app.use(cors({
+  origin:'http://localhost:5173'
+}));
 
 app.use(express.json());
 
 // db connect
 connectDB()
   .then(() => {
-  console.log("successfull")
+ app.listen(PORT, (req,res)=>{
+  console.log(`${PORT}`)
+ })
   })
   .catch((err) => console.error("Database connection error:", err));
 
 app.post("/api/tasks", async (req, res) => {
   const task = req.body.task;
-
+ console.log(task)
   try {
     const result = await TaskModel.create({ task });
     res.status(200).json(result);
@@ -47,8 +51,7 @@ app.put("/update/:id", async (req, res) => {
   try {
     const result = await TaskModel.findByIdAndUpdate(
       { _id: id },
-      { complete: true },
-      { new: true } // Return the updated document
+      { complete: true }
     );
     res.status(200).json(result);
   } catch (err) {
