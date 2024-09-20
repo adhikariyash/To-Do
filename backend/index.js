@@ -17,7 +17,7 @@ app.use(express.json());
 // db connect
 connectDB()
   .then(() => {
-  console.log(successful)
+  console.log("successfull")
   })
   .catch((err) => console.error("Database connection error:", err));
 
