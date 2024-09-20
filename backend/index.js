@@ -8,10 +8,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: '*',
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json());
 
 // db connect
