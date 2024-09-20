@@ -3,11 +3,12 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './src/db/index.js';
 import { TaskModel } from './src/models/user.models.js';
+const app = express();
 app.use(cors());
 app.options('*', cors());
 dotenv.config(); 
 
-const app = express();
+
 
 
 app.use(express.json());
