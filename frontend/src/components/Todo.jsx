@@ -7,7 +7,11 @@ function Todo() {
  
 
   function handleTask() {
-    axios.post("https://to-do-nine-khaki.vercel.app/api/tasks", { task: task })
+    axios.post("https://to-do-nine-khaki.vercel.app/api/tasks", { task: task },{
+      headers: {
+        'Content-Type': 'application/json',
+    }
+    })
       .then((result) => {
         location.reload()
       })

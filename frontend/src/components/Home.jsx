@@ -12,11 +12,19 @@ const [done, setDone] = useState()
 console.log(Todos)
 
      useEffect(() => {
-     axios.get("https://to-do-nine-khaki.vercel.app/tasks/get").then((result) =>  setTodo(result.data)).catch((err) => console.log(err));
+     axios.get("https://to-do-nine-khaki.vercel.app/tasks/get",{
+      headers: {
+        'Content-Type': 'application/json',
+    }
+     }).then((result) =>  setTodo(result.data)).catch((err) => console.log(err));
       }, []);
 
       const handleTodo = (id)=>{
- axios.put("https://to-do-nine-khaki.vercel.app/update/"+id).then(result => {
+ axios.put("https://to-do-nine-khaki.vercel.app/update/"+id, {
+  headers: {
+    'Content-Type': 'application/json',
+}
+ }).then(result => {
   setDone(result)
   location.reload()
  }).catch(err => (err))
@@ -24,7 +32,12 @@ console.log(Todos)
       }
     
       const handleDelete =(id) =>{
-        axios.delete("https://to-do-nine-khaki.vercel.app/delete/"+id)
+      axios.delete("https://to-do-nine-khaki.vercel.app/delete/"+id,{
+        headers: {
+          'Content-Type': 'application/json',
+      }
+      }
+      )
         .then(result => console.log(result)
       .catch(err => console.log(err)))
       } 
