@@ -9,7 +9,7 @@ function Todo() {
   function handleTask() {
     axios.post("https://to-do-nine-khaki.vercel.app/api/tasks", { task: task },{
       headers: {
-        'Access-Control-Allow-Origin': 'https://to-do-frontend-qyoq4sd3r-yashs-projects-a28e16d2.vercel.app/',
+        'Access-Control-Allow-Origin': '*',
     }
     })
       .then((result) => {

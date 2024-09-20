@@ -12,9 +12,9 @@ const [done, setDone] = useState()
 console.log(Todos)
 
      useEffect(() => {
-     axios.get("https://to-do-nine-khaki.vercel.app/tasks/get/",{
+     axios.get("https://to-do-nine-khaki.vercel.app/tasks/get",{
       headers: {
-        'Access-Control-Allow-Origin': 'https://to-do-frontend-qyoq4sd3r-yashs-projects-a28e16d2.vercel.app/',
+        'Access-Control-Allow-Origin': '*',
     }
      }).then((result) =>  setTodo(result.data)).catch((err) => console.log(err));
       }, []);
@@ -22,7 +22,7 @@ console.log(Todos)
       const handleTodo = (id)=>{
  axios.put("https://to-do-nine-khaki.vercel.app/update/"+id, {
   headers: {
-    'Access-Control-Allow-Origin': 'https://to-do-frontend-qyoq4sd3r-yashs-projects-a28e16d2.vercel.app/',
+    'Access-Control-Allow-Origin': '*',
 }
  }).then(result => {
   setDone(result)
@@ -34,7 +34,7 @@ console.log(Todos)
       const handleDelete =(id) =>{
       axios.delete("https://to-do-nine-khaki.vercel.app/delete/"+id,{
         headers: {
-          'Access-Control-Allow-Origin': 'https://to-do-frontend-qyoq4sd3r-yashs-projects-a28e16d2.vercel.app/',
+          'Access-Control-Allow-Origin': '*',
       }
       }
       )

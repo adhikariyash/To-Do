@@ -24,7 +24,7 @@ app.post("/api/tasks", async (req, res) => {
 
   try {
     const result = await TaskModel.create({ task });
-    res.json(result);
+    res.status(200).json(result);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Error creating task" });
@@ -34,7 +34,7 @@ app.post("/api/tasks", async (req, res) => {
 app.get("/tasks/get", async (req, res) => {
   try {
     const result = await TaskModel.find();
-    res.json(result);
+    res.status(200).json(result);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Error fetching tasks" });
@@ -50,7 +50,7 @@ app.put("/update/:id", async (req, res) => {
       { complete: true },
       { new: true } // Return the updated document
     );
-    res.json(result);
+    res.status(200).json(result);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Error updating task" });
@@ -62,7 +62,7 @@ app.delete("/delete/:id", async (req, res) => {
 
   try {
     const result = await TaskModel.findByIdAndDelete({ _id: id });
-    res.json(result);
+    res.status(200).json(result);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Error deleting task" });
