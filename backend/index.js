@@ -3,13 +3,13 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './src/db/index.js';
 import { TaskModel } from './src/models/user.models.js';
-
+app.use(cors());
+app.options('*', cors());
 dotenv.config(); 
 
 const app = express();
 
-app.use(cors());
-app.options('*', cors());
+
 app.use(express.json());
 
 // db connect
