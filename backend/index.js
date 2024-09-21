@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8000
 
 
 app.use(cors({
-  origin:'https://to-do-git-main-yashs-projects-a28e16d2.vercel.app'
+  origin:['https://to-dolist99.vercel.app/','https://to-do-black-psi.vercel.app/']
 }));
 
 app.use(express.json());
